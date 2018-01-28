@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Chris Masterton-Smith</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/grayscale.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="icon" href="/img/favicon.ico" type="image/x-icon" />
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+<!-- Navigation -->
+<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                <i class="fa fa-bars"></i>
+            </button>
+            <a class="navbar-brand page-scroll" href="/">
+                <i class="fa fa-play-circle"></i> mastertonsmith.uk
+            </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+            <ul class="nav navbar-nav">
+                <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                <li class="hidden">
+                    <a href="/"></a>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Steps<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#pisetup">Raspberry Pi</a></li>
+                        <li><a href="#weathersetup">Weather Station</a></li>
+                        <li><a href="#camsetup">WebCam</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#weatherdata">Configure the Weather Data</a></li>
+                        <li><a href="#wunderground">Setup Weather Underground</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#bom">Bill Of Materials</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+    <header class="holder">
+        <div class="holder-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <h3>I'm still working on this guide, more to come!</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+<section id="pisetup" class="container content-section">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+            <h2>Setup your Pi</h2>
+            <row>
+                <p>I am going to assume that you have the Raspberry Pi configured and working, however here are the other assumptions:</p>
+                <ol>
+                    <li>Raspberry Pi setup and up to date</li>
+                    <li>Configured for headless access (this will be easier to manage than eneding to connect a screen and keyboard etc</li>
+                    <li>External USB storage is mounted to save files to. (This means we can save the SD card from getting full of images)</li>
+                </ol>
+            </row>
+        </div>
+    </div>
+</section>
+
+<section id="weathersetup" class="container content-section">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+            <h2>Setup your Weather Station</h2>
+            <row>
+                <p>The weather station can be setup independently of the Pi to start with to ensure you have got sensible readings.</p>
+                <ol>
+                    <li>Setup the hardware as per the instructions, and connect the batteries.</li>
+                    <li>Pick a sensible location to mount it, including </li>
+                </ol>
+                <pre>&lt;p&gt;Sample text here...&lt;/p&gt;</pre>
+            </row>
+        </div>
+    </div>
+</section>
+<section id="camsetup" class="container content-section">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+            <h2>Webcam</h2>
+            <row>
+                <p>I based most of the webcam setup on the guide <a href="http://www.codeproject.com/Articles/762494/Raspberry-Pi-HD-Surveillance-Camera-with-Motion-Ni">here</a>, but again customised some bits</p>
+                <p>Install the basic python code form this site, then we can set about editing it:</p>
+                <pre>
+sudo apt-get install python-imaging-tk
+wget -c http://pastebin.com/raw.php?i=yH7JHz9w -O picam.py
+chmod +x picam.py
+                </pre>
+                <p>I decided not to show a large mount of images on the system, so instead am saving a latest image down and displaying that.</p>
+                <pre>
+                    Edited picam.py here
+                </pre>
+                <p>This is now saving an image to latest.jpg, saving one to the historical set and also saving a thumbnail, incase we want one for the web site.</p>
+            </row>
+        </div>
+    </div>
+</section>
+<section id="weatherdata" class="container content-section">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+            <h2>Get the weatehr data</h2>
+            <row>
+                <p>I started with the excellent guide here <a href="http://www.weather.dragontail.co.uk/index.php?page=pywws_setup" > but decided I wanted to be a bit more selective with my data.
+                    Firstly, I didn't want o build a graphing setup locally, if weather websites alredy do this then why not use their prowess, and work with them, rather than going to that effort.
+                    Secondly I already have some python running for teh webcam, so where possible lets leverage the same setup.
+                <pre></pre>
+            </row>
+        </div>
+    </div>
+</section>
+<section id="wunderground" class="container content-section">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+            <h2>Upload to Weather Underground</h2>
+            <row>
+                <p>some text then some code</p>
+                <pre>&lt;p&gt;Sample text here...&lt;/p&gt;</pre>
+            </row>
+        </div>
+    </div>
+</section>
+<section id="archive" class="container content-section">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+            <h2>Archiving Images</h2>
+            <row>
+                <p>I based most of teh webcam setup on teh guide <a href="http://www.codeproject.com/Articles/762494/Raspberry-Pi-HD-Surveillance-Camera-with-Motion-Ni">here</a>, but again customised some bits</p>
+                <p>Install the basic python code form this site, tehn we can set about editing it:</p>
+                <pre>
+sudo apt-get install python-imaging-tk
+wget -c http://pastebin.com/raw.php?i=yH7JHz9w -O picam.py
+chmod +x picam.py
+                </pre>
+                <p>I decided not to show a large mount of images on teh system, so instead am saving a latest image down and displaying that.</p>
+                <pre>
+                    Edited picam.py here
+                </pre>
+            </row>
+        </div>
+    </div>
+</section>
+<section id="bom" class="container content-section">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+            <h2>Bill Of Materials</h2>
+            <row>
+                <div class="col-md-4 col-sm-offset-2">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">To Buy</div>
+                        <ul>
+                            <li>Raspberry Pi</li>
+                                <ul>
+                                    <li>
+                                        <a href="https://www.modmypi.com/" target="_blank">Buy</a>
+                                    </li>
+                                </ul>
+                            <li>Maplin Weather Station</li>
+                                <ul>
+                                    <li>
+                                        <a href="http://www.maplin.co.uk/p/black-usb-wireless-touchscreen-weather-centre-n96gy" target="_blank">Buy</a>
+                                    </li>
+                                </ul>
+                        </ul>
+                    </div>
+                </div>
+            </row>
+        </div>
+    </div>
+</section>
+
+
+<!-- Footer -->
+<footer>
+    <div class="container text-center">
+        <p>Copyright &copy; Chris Masterton-Smith 2016</p>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="js/jquery.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.min.js"></script>
+
+<!-- Plugin JavaScript -->
+<script src="js/jquery.easing.min.js"></script>
+
+<!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="js/grayscale.js"></script>
+
+</body>
+
+</html>
